@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaTrash } from "react-icons/fa";
 import { HiPencil } from "react-icons/hi";
-import TaskEditModal from "./TaskEditModal";
+import TaskEditModal from "./modals/TaskEditModal";
 import DeleteModal from "./modals/DeleteModal";
 import { motion, AnimatePresence } from "framer-motion";
 
