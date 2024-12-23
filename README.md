@@ -6,6 +6,25 @@ Esta es una aplicación web de lista de tareas (To-Do List) desarrollada como pa
 
 Puedes ver la aplicación deployada en Netlify: [To-Do List - Netlify](https://to-ddolistt.netlify.app/).
 
+## Intrucciones
+
+Clona el repositorio con Git Clone 
+
+```bash
+git clone https://github.com/AlejoAndino/To-Do-List-PT.git
+```
+Despues parado en la carpeta del proyecto instala las dependencias
+
+```bash
+npm install
+```
+Una vez instaladas las dependencias ya se puede hacer el run
+
+```bash
+npm run dev
+```
+De todas formas el proyecto se encuentra deployado en la web por si no queres iniciarlo en local
+
 ## Funcionalidades
 
 - **Agregar nuevas tareas** con una interfaz limpia y moderna.
