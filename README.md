@@ -4,6 +4,8 @@
 
 Esta es una aplicación web de lista de tareas (To-Do List) desarrollada como parte de una prueba técnica para el rol de Desarrollador FrontEnd React. La aplicación permite gestionar tareas de manera eficiente con una buena experiencia al usuario.
 
+Puedes ver la aplicación deployada en Netlify: [To-Do List - Netlify](https://to-ddolistt.netlify.app/).
+
 ## Funcionalidades
 
 - **Agregar nuevas tareas** con una interfaz limpia y moderna.
@@ -50,36 +52,33 @@ Esta estructura se eligió para garantizar que la aplicación sea fácil de desa
 
 ## Diseño de la Aplicación
 
-El diseño de la aplicación se centra en ofrecer una experiencia de usuario intuitiva, limpia y agradable, guiado por los siguientes principios:
+El diseño de la aplicación se enfoca en una experiencia de usuario intuitiva, limpia y atractiva.
 
 1. **Minimalismo y claridad**:  
-   El diseño evita la sobrecarga de información visual, utilizando espacios en blanco para enfocar la atención del usuario en las funcionalidades clave. Esto garantiza que cualquier usuario, incluso sin experiencia previa, pueda navegar y utilizar la aplicación de manera eficiente.
+   Se evita la sobrecarga visual, utilizando espacios en blanco para centrar la atención en las funcionalidades clave, facilitando su uso incluso para usuarios novatos.
 
-2. **Diseño en general**:  
-   - **Título prominente**: "To-Do List" está centrado y resaltado para que los usuarios comprendan de inmediato el propósito de la aplicación.  
-   - **Indicadores claros**: El círculo en el centro muestra el progreso general con un porcentaje, combinando información visual y numérica para reforzar la comprensión.
-   - **Filtro de tareas**: Se añadio de forma adicional un filtrado de tareas para mejorar la organizacion del usuario
-   - **Agregar Tareas**: Se utilizo un Modal para la adicion de tareas con una animacion suave.
-   - **Lista de Tareas**: Me decidi por ese estilo ya que para mi era una opcion que junto a la paleta de colores que elegi, iba a quedar relajante para el usuario.
-   - **Tareas**: Componentes de tareas sencillo, con fecha y hora, chechbox de completado y botones para editar o eliminar la tareas, simple
+2. **Diseño general**:  
+   - **Título prominente**: "To-Do List" centrado y destacado para claridad.  
+   - **Indicadores claros**: Un círculo central muestra el progreso con información visual y numérica.  
+   - **Filtro de tareas**: Opción para filtrar tareas por estado, mejorando la organización.  
+   - **Agregar Tareas**: Modal con animación suave para añadir tareas.  
+   - **Lista de Tareas**: Diseño relajante con una paleta de colores suaves y componentes simples (fecha, hora, checkbox, botones de edición y eliminación).
 
 3. **Paleta de colores relajante**:  
-   Se eligió una combinación de colores suaves (grises y morados claros) para generar una sensación de calma.
+   Colores suaves (grises y morados claros) que generan una sensación de calma.
 
 4. **Diseño responsivo**:  
-   - El botón "Agregar Tarea" en moviles se transforma en un circulo con "+", es una opcion mucho mas llamativa para el usuario, tambien hace la pagina mucho mas simetrica respecto a los demas componentes
-   - La barra de progreso se centro en un lugar mucho mas simetrico en moviles para la mejora en la visibilidad desde el usuario.
+   - En móviles, el botón "Agregar Tarea" se transforma en un círculo con "+", mejorando la visibilidad y simetría.  
+   - La barra de progreso se centra para mayor visibilidad en móviles.
 
-6. **Extras**:
-   - Funcionalidad de filtrado para mostrar tareas completadas, incompletas o todas.
-   - Indicador de progreso visual con un círculo dinámico.
-   - Modales interactivos para agregar, editar y eliminar tareas, con animaciones para mejorar la usabilidad.
-   - Implementacion de animaciones para mejorar la experiencia del usuario
-   - Cuando no hay tareas disponibles, se muestra un mensaje amigable en el área central ("No hay tareas.") para guiar al usuario sin generar confusión.
-   - Fecha y hora en las tareas
-   - Deploy en Netlify
+5. **Extras**:  
+   - Funcionalidad de filtrado por estado de tarea.  
+   - Indicador visual de progreso con un círculo dinámico.  
+   - Modales interactivos con animaciones para agregar, editar y eliminar tareas.  
+   - Mensaje amigable ("No hay tareas.") cuando no hay tareas disponibles.  
+   - Fecha y hora en cada tarea.  
+   - Deploy en Netlify.
 
 ---
 
-Este diseño está pensado para ofrecer una experiencia simple, funcional y visualmente atractiva, ayudando a los usuarios a organizar sus tareas de forma efectiva.
 
