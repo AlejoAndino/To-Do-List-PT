@@ -18,7 +18,7 @@ const AddTaskForm: React.FC<TaskInputProps> = ({ addTask }) => {
   };
 
   return (
-    <div className='py-3 flex justify-end'>
+    <div className=''>
       {/* Botón para abrir el modal */}
       <button
         onClick={() => setIsModalOpen(true)}
