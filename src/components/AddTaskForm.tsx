@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 interface TaskInputProps {
   addTask: (text: string) => void;
@@ -20,12 +21,15 @@ const AddTaskForm: React.FC<TaskInputProps> = ({ addTask }) => {
   return (
     <div className=''>
       {/* Botón para abrir el modal */}
-      <button
+      <motion.button
+        initial={{ opacity: 0, y: -700}}
+        animate={{ opacity: 1, y: 0}}
+        transition={{ duration: 1 }}
         onClick={() => setIsModalOpen(true)}
         className="p-3 bg-indigo-500 text-white rounded-md"
       >
         Agregar Tarea
-      </button>
+      </motion.button>
 
       {/* Modal */}
       {isModalOpen && (

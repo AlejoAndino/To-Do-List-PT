@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import AddTaskForm from "./components/AddTaskForm";
 import TaskList from "./components/TaskList";
 import TaskFilter from "./components/TaskFilter";
+import ProgressBar from "./components/ProgressBar";
+import { motion } from "framer-motion";
 
 type Task = {
   id: string;
@@ -26,7 +28,7 @@ const App: React.FC = () => {
 
   // Guarda las tareas actualizandolo cuando las tareas cambian
   useEffect(() => {
-    if (initialized) { 
+    if (initialized) {
       localStorage.setItem("tasks", JSON.stringify(tasks));
     }
   }, [tasks, initialized]);
@@ -37,7 +39,7 @@ const App: React.FC = () => {
       id: Date.now().toString(),
       text,
       completed: false,
-      timestamp: new Date().toLocaleString(), 
+      timestamp: new Date().toLocaleString(),
     };
     setTasks([...tasks, newTask]);
   };
@@ -75,16 +77,24 @@ const App: React.FC = () => {
     return true;
   });
 
-
   return (
     <div className="min-h-screen flex flex-col items-center bg-gray-100">
-      <h1 className="text-5xl text-indigo-500 p-10 font-semibold text-center mb-4">
+      <motion.h1
+        initial={{ opacity: 0, scale: 0}}
+        animate={{ opacity: 1, scale: 1}}
+        transition={{ duration: 1 }}
+        className="text-5xl text-indigo-500 p-10 font-semibold text-center mb-4"
+      >
         To-Do List
-      </h1>
+      </motion.h1>
       <div className="w-full h-full max-w-3xl">
-        <div className="flex flex-row-reverse justify-between py-4">
-        <AddTaskForm addTask={addTask} />
-        <TaskFilter filter={filter} setFilter={setFilter} />
+        <div className="flex flex-row-reverse justify-between items-end py-4">
+          <AddTaskForm addTask={addTask} />
+          <ProgressBar
+            totalTasks={tasks.length}
+            completedTasks={tasks.filter((task) => task.completed).length}
+          />
+          <TaskFilter filter={filter} setFilter={setFilter} />
         </div>
         <TaskList
           tasks={filteredTasks}

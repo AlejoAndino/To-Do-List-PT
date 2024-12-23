@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 interface TaskFilterProps {
   filter: string;
@@ -7,7 +8,11 @@ interface TaskFilterProps {
 
 const TaskFilter: React.FC<TaskFilterProps> = ({ filter, setFilter }) => {
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: -700 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+    >
       <select
         className="p-3 border border-gray-300 rounded-md"
         value={filter}
@@ -17,7 +22,7 @@ const TaskFilter: React.FC<TaskFilterProps> = ({ filter, setFilter }) => {
         <option value="completed">Completadas</option>
         <option value="incomplete">Incompletas</option>
       </select>
-    </div>
+    </motion.div>
   );
 };
 
