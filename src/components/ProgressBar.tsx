@@ -18,7 +18,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
       initial={{ opacity: 0, y: -100, scale: 0}}
       animate={{ opacity: 1, y: 0, scale: 1}}
       transition={{ duration: 1.5 }}
-      className="flex flex-col items-center w-fit p-4 bg-white shadow-md rounded-full"
+      className="relative bottom-20 right-12 sm:top-0 sm:right-0 flex flex-col items-center w-fit p-4 bg-white shadow-md rounded-full"
     >
       <div className="relative w-32 h-32">
         {/* Progreso */}

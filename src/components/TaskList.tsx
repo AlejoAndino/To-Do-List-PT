@@ -24,7 +24,7 @@ const TaskList: React.FC<TaskListProps> = ({
   editTask,
 }) => {
   return (
-    <div className="bg-indigo-200 p-8 rounded-lg shadow-lg">
+    <div className="bg-indigo-200 p-4 md:p-8 rounded-lg shadow-lg">
       {tasks.length === 0 ? (
         <motion.p
           initial={{ opacity: 0, y: 100, scale: 0 }}

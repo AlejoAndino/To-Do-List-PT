@@ -15,13 +15,7 @@ const DeleteModal: React.FC<DeleteModalProps> = ({
   return (
     <AnimatePresence>
       {isOpen && (
-        <motion.div
-          className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.1 }}
-        >
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <motion.div
             className="bg-white p-6 rounded-md shadow-lg max-w-sm w-full"
             initial={{ scale: 0 }}
@@ -47,7 +41,7 @@ const DeleteModal: React.FC<DeleteModalProps> = ({
               </button>
             </div>
           </motion.div>
-        </motion.div>
+        </div>
       )}
     </AnimatePresence>
   );

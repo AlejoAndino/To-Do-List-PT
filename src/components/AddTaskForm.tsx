@@ -1,40 +1,47 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 interface TaskInputProps {
   addTask: (text: string) => void;
 }
 
 const AddTaskForm: React.FC<TaskInputProps> = ({ addTask }) => {
-  const [taskText, setTaskText] = useState('');
+  const [taskText, setTaskText] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (taskText.trim() !== '') {
+    if (taskText.trim() !== "") {
       addTask(taskText);
-      setTaskText('');
+      setTaskText("");
       setIsModalOpen(false);
     }
   };
 
   return (
-    <div className=''>
+    <div className="">
       {/* Botón para abrir el modal */}
       <motion.button
-        initial={{ opacity: 0, y: -700}}
-        animate={{ opacity: 1, y: 0}}
+        initial={{ opacity: 0, y: -700 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         onClick={() => setIsModalOpen(true)}
-        className="p-3 bg-indigo-500 text-white rounded-md"
+        className="p-2 md:p-3 bg-indigo-500 text-white w-14 h-14 sm:w-fit sm:h-fit rounded-full sm:rounded-md"
       >
-        Agregar Tarea
+        <span className="hidden sm:block">Agregar Tarea</span>
+        <span className="block sm:hidden text-3xl">+</span>
       </motion.button>
 
       {/* Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white w-full max-w-md p-6 rounded-md shadow-lg">
+        <div className="p-4 fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0 }}
+            transition={{ duration: 0.3 }}
+            className="bg-white w-full max-w-md p-6 rounded-md shadow-lg"
+          >
             <h2 className="text-xl font-semibold mb-4">Nueva Tarea</h2>
             <form onSubmit={handleSubmit} className="flex flex-col">
               <input
@@ -52,12 +59,15 @@ const AddTaskForm: React.FC<TaskInputProps> = ({ addTask }) => {
                 >
                   Cancelar
                 </button>
-                <button type="submit" className="p-2 bg-blue-500 text-white rounded-md">
+                <button
+                  type="submit"
+                  className="p-2 bg-blue-500 text-white rounded-md"
+                >
                   Agregar
                 </button>
               </div>
             </form>
-          </div>
+          </motion.div>
         </div>
       )}
     </div>

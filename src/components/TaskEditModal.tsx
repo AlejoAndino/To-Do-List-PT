@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 interface TaskEditModalProps {
   isOpen: boolean;
@@ -17,14 +18,20 @@ const TaskEditModal: React.FC<TaskEditModalProps> = ({
   const [completed, setCompleted] = useState(task.completed);
 
   const handleSave = () => {
-    onSave(task.id, text, completed); 
-    onClose(); 
+    onSave(task.id, text, completed);
+    onClose();
   };
 
   return (
     isOpen && (
-      <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-        <div className="bg-white p-6 rounded-lg w-1/3">
+      <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center p-4">
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          exit={{ scale: 0 }}
+          transition={{ duration: 0.3 }}
+          className="bg-white p-6 rounded-lg w-full max-w-md"
+        >
           <h2 className="text-xl mb-4">Editar Tarea</h2>
           <div className="mb-4">
             <input
@@ -56,7 +63,7 @@ const TaskEditModal: React.FC<TaskEditModalProps> = ({
               Guardar
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
     )
   );

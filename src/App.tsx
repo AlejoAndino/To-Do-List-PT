@@ -83,11 +83,11 @@ const App: React.FC = () => {
         initial={{ opacity: 0, scale: 0}}
         animate={{ opacity: 1, scale: 1}}
         transition={{ duration: 1 }}
-        className="text-5xl text-indigo-500 p-10 font-semibold text-center mb-4"
+        className="text-4xl md:text-5xl text-indigo-500 p-10 font-semibold text-center mb-7 sm:mb-4"
       >
         To-Do List
       </motion.h1>
-      <div className="w-full h-full max-w-3xl">
+      <div className="w-full h-full md:max-w-3xl p-5">
         <div className="flex flex-row-reverse justify-between items-end py-4">
           <AddTaskForm addTask={addTask} />
           <ProgressBar
